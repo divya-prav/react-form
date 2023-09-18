@@ -36,7 +36,7 @@ export default function Authenticate({token,setToken}){
      
 
         
-        <h2>Please Authenticate after Successful Sign In</h2>
+        <h2>Please Authenticate after Signing Up !!</h2>
         
         {error&& <p>{error}</p> }
        

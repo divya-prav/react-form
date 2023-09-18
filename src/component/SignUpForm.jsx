@@ -2,13 +2,14 @@ import '../App.css';
 import { useState } from "react";
 
 export default function SignUpForm({token,setToken}) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
   const [error, setError] = useState(null);
   const [submitMessage,setSubmitMessage] = useState("");
 
   async function handleSubmit(e){
     e.preventDefault();
+    if(e.target.username === null || e.target.password === null) {setSubmitMessage("Please Enter username and password")}
     try{
         const response = await fetch("https://fsa-jwt-practice.herokuapp.com/signup", {
          method:"POST",
@@ -18,8 +19,8 @@ export default function SignUpForm({token,setToken}) {
         console.log(data);
         setToken(data.token);
         if(token!== null)console.log(token);
-        setUsername("");
-        setPassword("");
+        setUsername(null);
+        setPassword(null);
         setSubmitMessage(data.message)
 
     }catch(e){
