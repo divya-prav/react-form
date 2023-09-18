@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import '../App.css';
 
 
 export default function Authenticate({token,setToken}){
@@ -33,16 +33,16 @@ export default function Authenticate({token,setToken}){
 
     return(
         <>
-        <h2>Authenticate</h2>
+     
 
         
-        
+        <h2>Please Authenticate after Successful Sign In</h2>
         
         {error&& <p>{error}</p> }
        
         {successMessage && <p>{successMessage}</p>}
     
-        <button onClick={handleClick}>Authenticate token</button>
+        <button onClick={handleClick}>Authenticate !!</button>
         </>
     )
 }
